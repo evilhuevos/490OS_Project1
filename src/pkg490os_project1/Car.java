@@ -5,10 +5,24 @@
  */
 package pkg490os_project1;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 /**
  *
  * @author Joshua
  */
 public class Car {
-    private String ID;
+    private String id;
+    private CarSpec carSpecs;
+    
+    public Car(String id, CarSpec carSpecs){
+        this.id=id;
+        this.carSpecs=carSpecs;
+    }
+    public String[] to_array() {
+        String[] array = {id,carSpecs.getMake(),carSpecs.getModel(),Integer.toString(carSpecs.getYear()),carSpecs.getSize()};
+        return array;
+    }
+
 }

@@ -17,10 +17,23 @@ public class CarSpec {
     private int year;
     private CarSize size;
     
-    CarSpec(String make, String model, int year,CarSize size ){
+    public CarSpec(String make, String model, int year,CarSize size ){
         this.make = make;
         this.model = model;
         this.year = year;
         this.size = size;
+    }
+    
+    public String getMake(){
+        return make;
+    }
+    public String getModel(){
+        return model;
+    }
+    public int getYear(){
+        return year;
+    }
+    public String getSize(){
+        return size.toString();
     }
 }
