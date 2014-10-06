@@ -12,17 +12,42 @@ import java.util.stream.Stream;
  *
  * @author Joshua
  */
-public class Car {
+public class Car  implements Searchable<String>{
     private String id;
     private CarSpec carSpecs;
+    
+    
     
     public Car(String id, CarSpec carSpecs){
         this.id=id;
         this.carSpecs=carSpecs;
+       
+    }
+    public void setId(String id){
+        this.id = id;
+    }
+    public String getId(){
+        return id;
+    }
+    public void setSpecs(CarSpec specs){
+        this.carSpecs = specs;
+    }
+    public CarSpec getSpecs() {
+        return carSpecs;
     }
     public String[] to_array() {
-        String[] array = {id,carSpecs.getMake(),carSpecs.getModel(),Integer.toString(carSpecs.getYear()),carSpecs.getSize()};
+        String[] array = {id,carSpecs.getMake(),carSpecs.getModel(),carSpecs.getYear(),carSpecs.getSize()};
         return array;
+    }
+
+//    @Override
+//    public boolean startsWith(String key) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    @Override
+    public boolean contains(String key) {
+       return id.toLowerCase().contains(key.toLowerCase()) ;
     }
 
 }
