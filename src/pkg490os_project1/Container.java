@@ -11,8 +11,11 @@ import java.util.stream.Collectors;
 /**
  *
  * @author MohammadA
+ * @param <K>
+ * @param <U>
+ * @param <V>
  */
-public class Container<K,U,V extends Searchable<U> > {
+public class Container<K,V extends Searchable<K> > {
     
     private Map<K,V> objects;
     
@@ -34,6 +37,10 @@ public class Container<K,U,V extends Searchable<U> > {
             objects.remove(key);
     }
     
+    public boolean exists (K key){
+        return objects.containsKey(key);
+    }
+    
     public V find(K key) throws Exception{
         if(objects.containsKey(key))
             return objects.get(key);
@@ -41,27 +48,31 @@ public class Container<K,U,V extends Searchable<U> > {
             throw new Exception("Item couldn't be found");
     }
     
-    public Collection<V> contains(U key){
+    public Collection<V> contains(K key){
         
-        /*Collection<V> list= objects.values().stream()
-                                               .filter(item->item.contains(key))
-                                               .collect(Collectors.toList());
-        return list;*/
-        
-        Collection<V> list=new LinkedList<V>();
-        for(V item: objects.values()){
-            if(item.contains(key))
-                list.add(item);
-        }
+        Collection<V> list  = objects.values().stream()
+                                                  .filter(item->item.contains(key))
+                                                  .collect(Collectors.toList());
         return list;
+        
+//        Collection<V> list=new LinkedList<V>();
+//        for(V item: objects.values()){
+//            if(item.contains(key))
+//                list.add(item);
+//        }
+//        return list;
     }
     
-    public Collection<V> startsWith(U key){
-        
-        Collection<V> list= objects.values().stream()
-                                               .filter(item->item.startsWith(key))
-                                               .collect(Collectors.toList());
-        return list;
-    }
+//    public Collection<V> startsWith(U key){
+//        
+//        Collection<V> list= objects.values().stream()
+//                                               .filter(item->item.startsWith(key))
+//                                               .collect(Collectors.toList());
+//        return list;
+//    }
+
+//    public void addCustomer(String string, String name, String telephone, String address) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
 }

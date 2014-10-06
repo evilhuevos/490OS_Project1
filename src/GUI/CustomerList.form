@@ -25,11 +25,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="rentBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="rentedBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="addCustomerBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="search_field" min="-2" pref="324" max="-2" attributes="0"/>
@@ -58,6 +60,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="rentBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="rentedBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="addCustomerBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane2" pref="223" max="32767" attributes="0"/>
@@ -71,17 +74,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Rent Car"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rentBtnActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="rentedBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rented Cars"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rentedBtnActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="search_field">
     </Component>
@@ -89,9 +86,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchBtnActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
@@ -115,5 +109,10 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="addCustomerBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Add Customer"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

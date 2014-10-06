@@ -11,7 +11,7 @@ package pkg490os_project1;
  */
 public interface Searchable<K> {
     
-    public boolean startsWith(K key);
+   // public boolean startsWith(K key);
     
     public boolean contains(K key);
     
